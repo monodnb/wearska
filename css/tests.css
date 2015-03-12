@@ -1,5 +1,3 @@
-
-
 .tile {
     height: 200px;
     display: -webkit-box;
@@ -14,4 +12,92 @@
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
+}
+
+
+/*******************************
+          Other Layout
+*******************************/
+
+html /deep/ [block] {
+  display: block;
+}
+
+/* ie support for hidden */
+html /deep/ [hidden] {
+  display: none !important;
+}
+
+html /deep/ [relative] {
+  position: relative;
+}
+
+html /deep/ [fit] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+html /deep/ paper-shadow,
+html /deep/ paper-animated-shadow {
+  display: block;
+  position: relative;
+}
+
+html /deep/ #shadow-bottom,
+html /deep/ #shadow-top {
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+html /deep/ #shadow-bottom[animated],
+html /deep/ #shadow-top[animated] {
+  -webkit-transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html /deep/ .paper-shadow-top-z-1 {
+  box-shadow: none;
+}
+
+html /deep/ .paper-shadow-bottom-z-1 {
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+}
+
+html /deep/ .paper-shadow-top-z-2 {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+html /deep/ .paper-shadow-bottom-z-2 {
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+html /deep/ .paper-shadow-top-z-3 {
+  box-shadow: 0 11px 7px 0 rgba(0, 0, 0, 0.19);
+}
+
+html /deep/ .paper-shadow-bottom-z-3 {
+  box-shadow: 0 13px 25px 0 rgba(0, 0, 0, 0.3);
+}
+
+html /deep/ .paper-shadow-top-z-4 {
+  box-shadow: 0 14px 12px 0 rgba(0, 0, 0, 0.17);
+}
+
+html /deep/ .paper-shadow-bottom-z-4 {
+  box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.3);
+}
+
+html /deep/ .paper-shadow-top-z-5 {
+  box-shadow: 0 17px 17px 0 rgba(0, 0, 0, 0.15);
+}
+
+html /deep/ .paper-shadow-bottom-z-5 {
+  box-shadow: 0 27px 55px 0 rgba(0, 0, 0, 0.3);
+}
+
+.focused{
+    z-index:1;
 }
