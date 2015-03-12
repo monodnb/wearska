@@ -2750,9 +2750,19 @@ TOAST
 /*--------------------------------------------------------------
 MENUTOGGLE
 --------------------------------------------------------------*/
+.animated-menutoggle.slower {
+    -webkit-transition: -webkit-transform 0.38s cubic-bezier(0.4, 0, 0.2, 1), margin 0.2s cubic-bezier(0.4, 0, 0.2, 1), width 0.16s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1), margin 0.2s cubic-bezier(0.4, 0, 0.2, 1), width 0.16s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .animated-menutoggle {
     -webkit-transition: -webkit-transform 0.28s cubic-bezier(0.4, 0, 0.2, 1), margin 0.2s cubic-bezier(0.4, 0, 0.2, 1), width 0.16s cubic-bezier(0.4, 0, 0.2, 1);
     transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1), margin 0.2s cubic-bezier(0.4, 0, 0.2, 1), width 0.16s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animated-menutoggle.faster {
+    -webkit-transition: -webkit-transform 0.18s cubic-bezier(0.4, 0, 0.2, 1), margin 0.2s cubic-bezier(0.4, 0, 0.2, 1), width 0.16s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.18s cubic-bezier(0.4, 0, 0.2, 1), margin 0.2s cubic-bezier(0.4, 0, 0.2, 1), width 0.16s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -2802,3 +2812,59 @@ MENUTOGGLE
     width: 16px;
     margin: 0
 }
+
+/*--------------------------------------------------------------
+RIPPLE EFFECT
+--------------------------------------------------------------*/
+
+.material {
+    position: relative;
+}
+
+.wave {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.ripple {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    margin-left: -10px;
+    margin-top: -10px;
+    border-radius: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: 50%;
+    -ms-transform-origin: 50%;
+    transform-origin: 50%;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.ripple.ripple-on {
+    opacity: 1;
+}
+
+.ripple.ripple-out {
+    opacity: 0;
+}
+
+
+.animated-ripple.natural {
+    -webkit-transition: all 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/*
+.natural {
+    -webkit-transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+}*/

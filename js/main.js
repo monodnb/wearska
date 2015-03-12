@@ -8,4 +8,9 @@
         $line.toggleClass("open");
     })
 
+    $(".tile").ripple({
+        bgColor: "gray",
+        elevation : true,
+    });
+
 }(jQuery));
