@@ -37,8 +37,8 @@
     var defaults = {
         bgColor: "#FFFFFF",
         rippleColor: "rgba(0, 0, 0, 0.1)",
-        startElevation: "1",
-        elevation: "none"
+        restElevation: "z0",
+        touchElevation: "z2"
     };
 
     //main function
@@ -60,11 +60,13 @@
     //Init
     Ripple.prototype.init = function () {
         var $element = this.element,
-            $parent = $element.parent();
+            $parent = $element.parent(),
+            bgColor = this.options.bgColor,
+            rippleColor = this.options.rippleColor;
         $element.css("background-color", this.options.bgColor);
         $element.addClass("material");
-        var elevation = this.options.startElevation;
-        var shadow = '<shadow><div id="shadow-bottom" fit="" class="paper-shadow-bottom-z-' + elevation + '" animated=""></div><div id="shadow-top" fit="" class="paper-shadow-top-z-' + elevation + '" animated=""></div></shadow>';
+        var restElevation = this.options.restElevation;
+        var shadow = '<shadow><div id="key-light" fit="" class="key-shadow z0 animated"></div><div id="ambient-light" fit="" class="ambient-shadow z0 animated"></div></shadow>';
         $element.append(shadow);
 
         $element.on("mousedown touchstart", function (event) {
@@ -90,17 +92,17 @@
             }
 
             //create the ripple
-            var $ripple = $('<div class="ripple animated-ripple natural"></div>');
+            var $ripple = $('<div class="ripple animated-ripple natural" style="background-color: ' + rippleColor + ';"></div>');
             $ripple.css({
                 top: startY,
                 left: startX
             });
             $wrapper.append($ripple);
+            console.log(rippleColor);
 
             //animate the ripple
             self.rippleExpand($element, $ripple);
             self.setElevation($element);
-            $element.addClass("focused");
 
             setTimeout(function () {
                 self.rippleEnd($element, $ripple);
@@ -136,11 +138,12 @@
      */
     Ripple.prototype.setElevation = function ($element) {
         var $shadowContainer = $element.find("shadow");
-        var elevation = "paper-shadow-bottom-z-" + this.options.elevation;
-        var startElevation = "paper-shadow-bottom-z-" + this.options.startElevation;
-        if (!elevation == "paper-shadow-bottom-z-none") {
-            $shadowContainer.find("#shadow-bottom").attr("class", elevation);
-            $shadowContainer.find("#shadow-top").attr("class", elevation);
+        var touchElevation = this.options.touchElevation;
+        var restElevation = this.options.restElevation;
+        if (touchElevation !== "off") {
+            $element.addClass("focused");
+            $shadowContainer.find("#key-light").addClass(touchElevation);
+            $shadowContainer.find("#ambient-light").addClass(touchElevation);
 
             $element.one("mouseup mouseleave touchend touchcancel", function (event) {
                 if (self.isMobile() && event.type === "mouseup") {
@@ -148,12 +151,13 @@
                 } else if (self.isMobile() && event.type === "mouseleave") {
                     return false;
                 }
-                $shadowContainer.find("#shadow-bottom").attr("class", startElevation);
-                $shadowContainer.find("#shadow-top").attr("class", startElevation);
+                $element.removeClass("focused");
+                $shadowContainer.find("#key-light").removeClass(touchElevation);
+                $shadowContainer.find("#ambient-light").removeClass(touchElevation);
+
                 console.log("back to normal");
             });
         }
-
     };
 
     /**
@@ -245,7 +249,6 @@
             .addClass("ripple-out");
         $ripple.on("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function () {
             $ripple.remove();
-            console.log("ripple removed");
         });
     };
 
@@ -261,111 +264,4 @@
         });
     };
 
-})(jQuery, window, document);
-
-// scroll in view
-(function ($, window, document, undefined) {
-    "use strict";
-
-    //plugin name
-    var inview = "inview";
-
-    //get instance
-    var self = null;
-
-    //defaults
-    var defaults = {};
-
-    //main function
-    function Inview(element, options) {
-        self = this;
-        this.element = $(element);
-        this.options = $.extend({}, defaults, options);
-        this._defaults = defaults;
-        this._name = inview;
-        //init
-        this.init();
-        //this.clicker();
-    }
-
-    Inview.prototype.clicker = function () {
-        var $element = this.element;
-        $element.on("touchstart", function () {
-            $element.toggleClass("z-depth-5");
-        });
-    };
-
-    Inview.prototype.init = function () {
-        var $element = this.element;
-        $window.on("scroll", function () {
-            var windowScroll = $window.scrollTop(),
-                docHeight = $document.height(),
-                winHeight = $window.height(),
-                elIndex = $element.index(),
-                elHeight = $element.outerHeight(),
-                elWidth = $element.outerWidth(),
-                parentOffset = $element.parent().offset().top,
-                elTopEdge = $element.position().top,
-                elTopOffset = elTopEdge - windowScroll + elHeight,
-                elBottomEdge = $element.offset().top + elHeight,
-                elBottomOffset = elBottomEdge - windowScroll - winHeight;
-
-            if (elTopOffset >= elHeight && elBottomOffset < 0) {
-                $element.data("visible", "on");
-                //$element.removeClass("under over above beyond on").addClass("on");   
-            } else if (elTopOffset < elHeight && elTopOffset > elHeight / 2) {
-                $element.data("visible", "under");
-                //$element.removeClass("under over above beyond on").addClass("under");   
-            } else if (elTopOffset < elHeight && elBottomOffset <= 0) {
-                $element.data("visible", "above");
-                //$element.removeClass("under over above beyond on").addClass("above");   
-            } else if (elBottomOffset < elHeight / 2 && elBottomOffset >= 0) {
-                $element.data("visible", "over");
-                //$element.removeClass("under over above beyond on").addClass("over");   
-            } else if (elBottomOffset >= elHeight / 2) {
-                $element.data("visible", "beyond");
-                //$element.removeClass("under over above beyond on").addClass("beyond");   
-            }
-            self.castShadow($element);
-
-            if (elIndex === 2) {
-                console.log(elIndex + " is at " + elTopEdge + " from top");
-                console.log(elTopOffset + " & " + elBottomOffset);
-            }
-        });
-
-        $window.scroll();
-
-    };
-
-    Inview.prototype.castShadow = function ($element) {
-        if ($element.data("visible") === "on" && !$element.hasClass("z-depth-5")) {
-            $element.removeClass("z-depth-1-half z-depth-1").addClass("z-depth-5");
-        }
-
-        if ($element.data("visible") === "under" && !$element.hasClass("z-depth-1-half")) {
-            $element.removeClass("z-depth-1 z-depth-5").addClass("z-depth-1-half");
-        }
-
-        if ($element.data("visible") === "over" && !$element.hasClass("z-depth-1-half")) {
-            $element.removeClass("z-depth-1 z-depth-5").addClass("z-depth-1-half");
-        }
-
-        if ($element.data("visible") === "above" && !$element.hasClass("z-depth-1")) {
-            $element.removeClass("z-depth-1-half z-depth-5").addClass("z-depth-1");
-        }
-
-        if ($element.data("visible") === "beyond" && !$element.hasClass("z-depth-1")) {
-            $element.removeClass("z-depth-1-half z-depth-5").addClass("z-depth-1");
-        }
-    };
-
-    /**
-     * Create the jquery plugin function
-     */
-    $.fn.inview = function (options) {
-        return this.each(function () {
-            new Inview(this, options);
-        });
-    };
 })(jQuery, window, document);

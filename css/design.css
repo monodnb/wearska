@@ -2615,17 +2615,72 @@ COLOR PALETTE
 SHADOWS
 --------------------------------------------------------------*/
 
-.key-shadow {
+/*.key-shadow {
     box-shadow: 0 7px 15px 0 rgba(0, 0, 0, 0.3);
 }
 
 .ambient-shadow {
     box-shadow: 0 -1px 15px 0 rgba(0, 0, 0, 0.18);
-}
+}*/
 
 .combined-shadow {
     box-shadow: 0 -1px 15px 0 rgba(0, 0, 0, 0.15), 0 7px 15px 0 rgba(0, 0, 0, 0.32);
 }
+
+.key-shadow.z0 {
+    box-shadow: none;
+}
+
+.ambient-shadow.z0 {
+    box-shadow: 0 -1px 15px 0 rgba(0, 0, 0, 0.18);
+}
+
+
+.key-shadow.z1 {
+    box-shadow: 0 7px 15px 0 rgba(0, 0, 0, 0.3);
+}
+
+.ambient-shadow.z1 {
+    box-shadow: 0 -1px 15px 0 rgba(0, 0, 0, 0.18);
+}
+
+.key-shadow.z2 {
+    box-shadow: 0 12px 22px 0 rgba(0, 0, 0, 0.28);
+}
+
+.ambient-shadow.z2 {
+    box-shadow: 0 -1px 15px 0 rgba(0, 0, 0, 0.18);
+}
+
+
+.key-shadow.z3 {
+    box-shadow: 0 17px 29px 0 rgba(0, 0, 0, 0.26);
+}
+
+.ambient-shadow.z3 {
+    box-shadow: 0 -1px 15px 0 rgba(0, 0, 0, 0.18);
+}
+
+
+.key-shadow.z4 {
+    box-shadow: 0 22px 36px 0 rgba(0, 0, 0, 0.24);
+}
+
+.ambient-shadow.z4 {
+    box-shadow: 0 -1px 15px 0 rgba(0, 0, 0, 0.18);
+}
+
+
+.key-shadow.z5 {
+    box-shadow: 0 27px 43px 0 rgba(0, 0, 0, 0.22);
+}
+
+.ambient-shadow.z5 {
+    box-shadow: 0 -1px 15px 0 rgba(0, 0, 0, 0.18);
+}
+
+
+/*
 
 .z1-shadow {
     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
@@ -2646,8 +2701,9 @@ SHADOWS
 .z5-shadow {
     box-shadow: 0 27px 55px 0 rgba(0, 0, 0, 0.3), 0 17px 17px 0 rgba(0, 0, 0, 0.15);
 }
+*/
 
-.animated-shadow {
+[class*="-shadow"].animated {
     -webkit-transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
     transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
