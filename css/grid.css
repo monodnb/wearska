@@ -9,12 +9,18 @@ body {
     box-sizing: border-box;
 }
 
-.container {
+/*.container {
     padding: 0 1.5rem;
     margin: 0 auto;
     max-width: 1280px;
     width: 90%;
+}*/
+.container {
+    padding: 0;
+    margin: 0 auto;
+    width: 90%;
 }
+
 
 .row {
     width: 100%;
