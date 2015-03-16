@@ -1,4 +1,5 @@
 img {
+    width: 100%;
     max-width: 100%;
     height: auto;
 }
@@ -25,6 +26,22 @@ img {
     float: right !important;
 }
 
+.sticky-top {
+    position: fixed;
+    top: 0;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+.dead-center {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
 .clearfix:before,
 .clearfix:after {
     content: " ";
@@ -38,7 +55,6 @@ img {
 .focused {
     z-index: 1;
 }
-
 
 [fit] {
     position: absolute;

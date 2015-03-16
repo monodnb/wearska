@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<svg width="44" height="44" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <g>
+  <title>Layer 1</title>
+  <use fill="#ffffff" x="45.643029" y="91.044478" transform="matrix(0.07433683505054045,0,0,0.07433683505054045,-0.39984846487641335,-3.5689082285857694) " xlink:href="#svg_13" id="svg_14"/>
+ </g>
+ <defs>
+  <symbol viewBox="0 0 512 512" height="512px" width="512px" y="0px" x="0px" id="svg_13" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+   <path d="m448,96l-384,0l0,320l384,0l0,-320zm64,-64l0,0l0,448l-512,0l0,-448l512,0zm-96,352l-320,0l0,-64l96,-160l131.5,160l92.5,-64l0,32l0,96zm-96,-208c0,26.509995 21.48999,48 48,48s48,-21.490005 48,-48s-21.48999,-48 -48,-48s-48,21.490005 -48,48z"/>
+  </symbol>
+ </defs>
+</svg>

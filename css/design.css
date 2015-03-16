@@ -4,82 +4,82 @@ TYPE
 
 @font-face {
     font-family: "Roboto";
-    src: url("../font/roboto/Roboto-Light.ttf");
+    src: url("../fonts/roboto/Roboto-Light.ttf");
     font-weight: 300;
 }
 
 @font-face {
     font-family: "Roboto";
-    src: url("../font/roboto/Roboto-Regular.ttf");
+    src: url("../fonts/roboto/Roboto-Regular.ttf");
     font-weight: 400;
 }
 
 @font-face {
     font-family: "Roboto";
-    src: url("../font/roboto/Roboto-Medium.ttf");
+    src: url("../fonts/roboto/Roboto-Medium.ttf");
     font-weight: 500;
 }
 
 @font-face {
     font-family: "Roboto";
-    src: url("../font/roboto/Roboto-Bold.ttf");
+    src: url("../fonts/roboto/Roboto-Bold.ttf");
     font-weight: 700;
 }
 
 @font-face {
     font-family: "Roboto";
-    src: url("../font/roboto/Roboto-Thin.ttf");
+    src: url("../fonts/roboto/Roboto-Thin.ttf");
     font-weight: 200;
 }
 
 @font-face {
     font-family: "NotoSerif";
-    src: url("../font/noto-serif/NotoSerif-Regular.ttf");
+    src: url("../fonts/noto-serif/NotoSerif-Regular.ttf");
     font-weight: 400;
 }
 
 @font-face {
     font-family: "NotoSerif";
-    src: url("../font/noto-serif/NotoSerif-Italic.ttf");
+    src: url("../fonts/noto-serif/NotoSerif-Italic.ttf");
     font-weight: 400;
     font-style: italic;
 }
 
 @font-face {
     font-family: "NotoSerif";
-    src: url("../font/noto-serif/NotoSerif-Bold.ttf");
+    src: url("../fonts/noto-serif/NotoSerif-Bold.ttf");
     font-weight: 700;
 }
 
 @font-face {
     font-family: "NotoSerif";
-    src: url("../font/noto-serif/NotoSerif-BoldItalic.ttf");
+    src: url("../fonts/noto-serif/NotoSerif-BoldItalic.ttf");
     font-weight: 700;
     font-style: italic;
 }
 
 @font-face {
     font-family: "NotoSans";
-    src: url("../font/noto-sans/NotoSans-Regular.ttf");
+    src: url("../fonts/noto-sans/NotoSans-Regular.ttf");
     font-weight: 400;
 }
 
 @font-face {
     font-family: "NotoSans";
-    src: url("../font/noto-sans/NotoSans-Italic.ttf");
+    src: url("../fonts/noto-sans/NotoSans-Italic.ttf");
     font-weight: 400;
     font-style: italic;
 }
 
 @font-face {
     font-family: "NotoSans";
-    src: url("../font/noto-sans/NotoSans-Bold.ttf");
+    src: url("../fonts/noto-sans/NotoSans-Bold.ttf");
     font-weight: 700;
 }
 
 @font-face {
     font-family: "NotoSans";
-    src: url("../font/noto-sans/NotoSans-BoldItalic.ttf");
+    src: url("../fonts/noto-sans/NotoSans-BoldItalic.ttf");
     font-weight: 700;
     font-style: italic;
 }
@@ -2614,18 +2614,18 @@ COLOR PALETTE
 /*--------------------------------------------------------------
 SHADOWS
 --------------------------------------------------------------*/
-
 /*.key-shadow {
     box-shadow: 0 7px 15px 0 rgba(0, 0, 0, 0.3);
 }
 
 .ambient-shadow {
     box-shadow: 0 -1px 15px 0 rgba(0, 0, 0, 0.18);
-}*/
+}
 
 .combined-shadow {
     box-shadow: 0 -1px 15px 0 rgba(0, 0, 0, 0.15), 0 7px 15px 0 rgba(0, 0, 0, 0.32);
 }
+*/
 
 .key-shadow.z0 {
     box-shadow: none;
@@ -2635,6 +2635,9 @@ SHADOWS
     box-shadow: 0 -1px 15px 0 rgba(0, 0, 0, 0.18);
 }
 
+.combined-shadow.z0 {
+    box-shadow: 0 -1px 15px 0 rgba(0, 0, 0, 0.18);
+}
 
 .key-shadow.z1 {
     box-shadow: 0 7px 15px 0 rgba(0, 0, 0, 0.3);
@@ -2642,6 +2645,10 @@ SHADOWS
 
 .ambient-shadow.z1 {
     box-shadow: 0 -1px 15px 0 rgba(0, 0, 0, 0.18);
+}
+
+.combined-shadow.z1 {
+    box-shadow: 0 7px 15px 0 rgba(0, 0, 0, 0.3), 0 -1px 15px 0 rgba(0, 0, 0, 0.18);
 }
 
 .key-shadow.z2 {
@@ -2652,6 +2659,9 @@ SHADOWS
     box-shadow: 0 -1px 15px 0 rgba(0, 0, 0, 0.18);
 }
 
+.combined-shadow.z2 {
+    box-shadow: 0 12px 22px 0 rgba(0, 0, 0, 0.28), 0 -1px 15px 0 rgba(0, 0, 0, 0.18);
+}
 
 .key-shadow.z3 {
     box-shadow: 0 17px 29px 0 rgba(0, 0, 0, 0.26);
@@ -2661,6 +2671,9 @@ SHADOWS
     box-shadow: 0 -1px 15px 0 rgba(0, 0, 0, 0.18);
 }
 
+.combined-shadow.z3 {
+    box-shadow: 0 17px 29px 0 rgba(0, 0, 0, 0.26), 0 -1px 15px 0 rgba(0, 0, 0, 0.18);
+}
 
 .key-shadow.z4 {
     box-shadow: 0 22px 36px 0 rgba(0, 0, 0, 0.24);
@@ -2670,6 +2683,9 @@ SHADOWS
     box-shadow: 0 -1px 15px 0 rgba(0, 0, 0, 0.18);
 }
 
+.combined-shadow.z4 {
+    box-shadow: 0 22px 36px 0 rgba(0, 0, 0, 0.24), 0 -1px 15px 0 rgba(0, 0, 0, 0.18);
+}
 
 .key-shadow.z5 {
     box-shadow: 0 27px 43px 0 rgba(0, 0, 0, 0.22);
@@ -2679,7 +2695,9 @@ SHADOWS
     box-shadow: 0 -1px 15px 0 rgba(0, 0, 0, 0.18);
 }
 
-
+.combined-shadow.z5 {
+    box-shadow: 0 27px 43px 0 rgba(0, 0, 0, 0.22), 0 -1px 15px 0 rgba(0, 0, 0, 0.18);
+}
 /*
 
 .z1-shadow {
@@ -2802,10 +2820,10 @@ TOAST
         float: right;
     }
 }
-
 /*--------------------------------------------------------------
 MENUTOGGLE
 --------------------------------------------------------------*/
+
 .animated-menutoggle.slower {
     -webkit-transition: -webkit-transform 0.38s cubic-bezier(0.4, 0, 0.2, 1), margin 0.2s cubic-bezier(0.4, 0, 0.2, 1), width 0.16s cubic-bezier(0.4, 0, 0.2, 1);
     transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1), margin 0.2s cubic-bezier(0.4, 0, 0.2, 1), width 0.16s cubic-bezier(0.4, 0, 0.2, 1);
@@ -2820,7 +2838,6 @@ MENUTOGGLE
     -webkit-transition: -webkit-transform 0.18s cubic-bezier(0.4, 0, 0.2, 1), margin 0.2s cubic-bezier(0.4, 0, 0.2, 1), width 0.16s cubic-bezier(0.4, 0, 0.2, 1);
     transition: transform 0.18s cubic-bezier(0.4, 0, 0.2, 1), margin 0.2s cubic-bezier(0.4, 0, 0.2, 1), width 0.16s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 
 #menutoggle {
     display: block;
@@ -2868,7 +2885,6 @@ MENUTOGGLE
     width: 16px;
     margin: 0
 }
-
 /*--------------------------------------------------------------
 RIPPLE EFFECT
 --------------------------------------------------------------*/
@@ -2914,7 +2930,6 @@ RIPPLE EFFECT
     opacity: 0;
 }
 
-
 .animated-ripple.natural {
     -webkit-transition: all 0.38s cubic-bezier(0.4, 0, 0.2, 1);
     transition: all 0.38s cubic-bezier(0.4, 0, 0.2, 1);
@@ -2924,55 +2939,88 @@ RIPPLE EFFECT
     -webkit-transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
     transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
 }*/
-
-
 /*--------------------------------------------------------------
 CARDS
 --------------------------------------------------------------*/
 
-card{
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
+.tile {
+    position: relative;
     overflow: hidden;
 }
 
-.tile {
+.card {
     position: relative;
+    overflow: hidden;
 }
 
-.tile > img{
-    width:100%;
-}
+.card > div {}
 
-.card-info{
-    position:absolute;
-    width:10px;
-    height:10px;
-    -webkit-transform: scale3d(1,1,1);
-    transform: scale3d(1,1,1);
-    background-color:#00b4a6;
-    margin:auto;
+.card-overlay,
+.card-info {
+    position: absolute;
     top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    height: 100%;
+    width: 100%;
+    -webkit-transform-origin: center;
+    -ms-transform-origin: center;
+    transform-origin: center;
+}
+
+.card-info.on {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: -webkit-transform 0.18s 0.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.01s 0.3s linear;
+    transition: transform 0.18s 0.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.01s 0.3s linear;
+}
+
+.card-info.off {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition: -webkit-transform 0.18s 0.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.01s 0.3s linear;
+    transition: transform 0.18s 0.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.01s 0.3s linear;
+}
+
+.card-overlay {
     border-radius: 50%;
     -webkit-transform-origin: center;
     -ms-transform-origin: center;
     transform-origin: center;
-    -webkit-transition:
-        -webkit-transform 0.78s cubic-bezier(0.4, 0, 0.2, 1);
-    transition:
-        transform 0.78s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-overlay.off {
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition: -webkit-transform 0.38s 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.38s 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-overlay.on {
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+    -webkit-transition: -webkit-transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-icons {
+    width: 4rem;
+    height: 4rem;
+    -webkit-filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.2));
+}
+
+.card-title{
+    position:absolute;
+    left: 1.5rem;
+    bottom:1.5rem;
+    font-family: Roboto;
+    font-size: 2rem;
+    font-weight: 300;
+    color: #ffffff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
